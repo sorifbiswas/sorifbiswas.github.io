@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sorif Biswas | Cybersecurity</title>
+<meta name="description" content="Sorif Biswas builds security guides, scripts and tools that make threats easier to understand and harder to ignore.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#050505; --panel:#0e0c0c; --line:#2a2224;
+  --text:#f8f0e0; --muted:#a39a8c;
+  --red:#e8203a; --gold:#f8e028;
+  --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --sans:"Instrument Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font:400 1.0625rem/1.65 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.wrap{max-width:62rem;margin:0 auto;padding:0 1.5rem}
+
+/* header */
+header{padding:1.25rem 0}
+header .wrap{display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.mark{font:700 1.35rem/1 var(--serif);text-decoration:none;letter-spacing:.02em}
+nav{display:flex;gap:1.5rem;font-size:.95rem}
+nav a{color:var(--muted);text-decoration:none}
+nav a:hover{color:var(--gold)}
+
+/* hero */
+.hero{padding:4rem 0 5rem;border-bottom:1px solid var(--line)}
+.hero .wrap{display:grid;grid-template-columns:1.4fr 1fr;gap:3rem;align-items:center}
+h1{font:700 clamp(3rem,8vw,5.75rem)/.95 var(--serif);letter-spacing:-.01em}
+.lede{margin-top:1.5rem;max-width:32rem;font-size:1.2rem;color:var(--muted)}
+.cta{display:flex;gap:.9rem;margin-top:2rem;flex-wrap:wrap}
+.btn{display:inline-block;padding:.7rem 1.3rem;border:1px solid var(--red);text-decoration:none;font-weight:500}
+.btn.solid{background:var(--red);color:#fff}
+.btn:hover{border-color:var(--gold);color:var(--gold)}
+.btn.solid:hover{background:var(--gold);color:#050505}
+
+/* the gate: one memorable element */
+.gate{justify-self:center;width:min(100%,19rem);aspect-ratio:3/4.4;position:relative;
+  border:2px solid var(--red);border-radius:999px 999px 0 0;
+  background:radial-gradient(ellipse at 50% 30%,rgba(232,32,58,.28),transparent 65%),var(--panel);
+  box-shadow:0 0 60px rgba(232,32,58,.18),inset 0 0 0 10px #050505,inset 0 0 0 11px var(--line)}
+.gate::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:1px;background:var(--line)}
+.key{position:absolute;left:50%;top:56%;width:1.1rem;height:1.1rem;margin-left:-.55rem;border-radius:50%;background:var(--gold);box-shadow:0 0 18px var(--gold);animation:glow 3.2s ease-in-out infinite}
+.key::after{content:"";position:absolute;left:50%;top:80%;width:.45rem;height:1.2rem;margin-left:-.225rem;background:var(--gold);clip-path:polygon(25% 0,75% 0,100% 100%,0 100%)}
+@keyframes glow{50%{opacity:.45;box-shadow:0 0 6px var(--gold)}}
+
+/* sections */
+section{padding:4.5rem 0;border-bottom:1px solid var(--line)}
+h2{font:700 clamp(2rem,4vw,2.75rem)/1.1 var(--serif);margin-bottom:1.5rem}
+.about p{max-width:40rem;margin-bottom:1rem}
+.about p:last-child{color:var(--muted)}
+
+.work{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.work article{padding:1.5rem 0 0;border-top:2px solid var(--red)}
+.work h3{font:700 1.5rem/1.2 var(--serif);margin-bottom:.6rem}
+.work p{color:var(--muted);font-size:1rem}
+
+.skills dl{display:grid;grid-template-columns:11rem 1fr;gap:1.1rem 2rem;max-width:52rem}
+.skills dt{font:700 1.25rem/1.4 var(--serif);color:var(--gold)}
+.skills dd{color:var(--muted)}
+
+.contact p{max-width:34rem;color:var(--muted);margin-bottom:1.5rem}
+.links{display:flex;flex-wrap:wrap;gap:.8rem}
+.links a{padding:.55rem 1.1rem;border:1px solid var(--line);text-decoration:none}
+.links a:hover{border-color:var(--red);color:var(--gold)}
+
+footer{padding:2rem 0 3rem;color:var(--muted);font-size:.9rem}
+
+@media (max-width:48rem){
+  .hero .wrap{grid-template-columns:1fr}
+  .gate{order:-1;width:11rem}
+  .work{grid-template-columns:1fr}
+  .skills dl{grid-template-columns:1fr;gap:.2rem}
+  .skills dd{margin-bottom:1rem}
+  nav{gap:1rem}
+}
+@media (prefers-reduced-motion:reduce){.key{animation:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="mark" href="#top">Sorif Biswas</a>
+    <nav aria-label="Main">
+      <a href="#about">About</a>
+      <a href="#work">Work</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <h1>Sorif<br>Biswas</h1>
+        <p class="lede">I work in cybersecurity. I build guides, scripts and tools that make threats easier to understand and harder to ignore.</p>
+        <div class="cta">
+          <a class="btn solid" href="https://github.com/sorifbiswas?tab=repositories">See my projects</a>
+          <a class="btn" href="#contact">Get in touch</a>
+        </div>
+      </div>
+      <div class="gate" role="img" aria-label="A closed stone gate with a glowing keyhole"><span class="key"></span></div>
+    </div>
+  </div>
+
+  <section id="about" class="about">
+    <div class="wrap">
+      <h2>About</h2>
+      <p>Most of my work is about explaining security clearly: threat guides people can follow, detection scripts that do one job well, and a chatbot built for the classroom.</p>
+      <p>Away from the keyboard I’m drawn to surrealism, classical art, romanticism, dark academia and mythology: stone, shadow, and old stories about gates and the people who guard them.</p>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="wrap">
+      <h2>What I build</h2>
+      <div class="work">
+        <article>
+          <h3>Cybersecurity education</h3>
+          <p>Threat guides, detection scripts and a classroom chatbot that help people learn how attacks work and how to spot them.</p>
+        </article>
+        <article>
+          <h3>Security fundamentals</h3>
+          <p>Windows administration, auditing and incident response: the everyday groundwork that keeps systems defensible.</p>
+        </article>
+        <article>
+          <h3>Tooling</h3>
+          <p>Python first, with web and systems work around it. Small, focused tools over large frameworks.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="skills">
+    <div class="wrap">
+      <h2>Skills</h2>
+      <dl>
+        <dt>Languages</dt>
+        <dd>Python, JavaScript, TypeScript, C#, Java, C++, C, SQL, Bash, PowerShell, PHP, Go</dd>
+        <dt>Web</dt>
+        <dd>HTML, CSS, React, Node.js, Flask, Django, Express, Tailwind CSS, Bootstrap, REST APIs</dd>
+        <dt>Security</dt>
+        <dd>Penetration testing, incident response, threat hunting, threat modeling, vulnerability assessment, malware analysis, digital forensics, reverse engineering, OSINT, SIEM, OWASP Top 10, cryptography, secure coding</dd>
+        <dt>Tools</dt>
+        <dd>Wireshark, Nmap, Burp Suite, Metasploit, Kali Linux, Splunk, Snort, Hashcat, Ghidra, OWASP ZAP, Autopsy</dd>
+        <dt>Networking</dt>
+        <dd>TCP/IP, DNS, DHCP, HTTP and HTTPS, TLS, VPN, firewalls, IDS and IPS, subnetting, packet analysis, VLANs</dd>
+        <dt>Systems</dt>
+        <dd>Linux, Windows, Windows Server, Active Directory, macOS, Ubuntu, Debian, VirtualBox, VMware</dd>
+        <dt>Workflow</dt>
+        <dd>Git, GitHub, GitHub Actions, Docker, VS Code, Vim, Postman, Jira, Nginx, Apache</dd>
+      </dl>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <h2>Let’s connect</h2>
+      <p>Want to build or defend something together? Send me a message and I’ll get back to you.</p>
+      <div class="links">
+        <a href="mailto:sorifbiswas786@gmail.com">Email</a>
+        <a href="https://github.com/sorifbiswas">GitHub</a>
+        <a href="https://www.linkedin.com/in/sorifbiswas">LinkedIn</a>
+        <a href="https://www.instagram.com/ssorifbiswas">Instagram</a>
+        <a href="https://twitter.com/sorifbiswas1">X</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© <span id="y">2026</span> Sorif Biswas</div>
+</footer>
+<script>document.getElementById("y").textContent=new Date().getFullYear();</script>
+</body>
+</html>
